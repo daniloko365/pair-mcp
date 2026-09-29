@@ -113,6 +113,28 @@ async def test_unknown_pricing_with_finite_budget_never_generates():
 
 
 @pytest.mark.asyncio
+async def test_clodex_fixed_usage_shape_stays_unpriced_until_account_billing_is_verified():
+    calls = []
+    clodex = provider("clodex", baseUrl="https://clodex.xyz/v1")
+
+    def handle(request):
+        calls.append(request.url.path)
+        assert request.url.path == "/v1/models", "Finite-budget preflight must not send a generation"
+        return httpx2.Response(200, json={"data": [{"id": "gpt-6-luna", "pricing": {
+            "model_name": "gpt-6-luna", "quota_type": 0, "model_ratio": 37.5,
+            "model_price": 0, "completion_ratio": 2, "completion_ratio_applies": False,
+            "usage_fixed_price": 0.065, "usage_fixed_price_unit": "per_1m_total_tokens",
+            "enable_groups": ["default", "UNIFIED"]}}]})
+
+    router = ProviderRouter(VaultFixture(), {"providers": [clodex]}, transport=httpx2.MockTransport(handle))
+    with pytest.raises(RoutingError) as exc:
+        await router.complete([{"providerId": "clodex", "model": "gpt-6-luna"}],
+                              [{"role": "user", "content": "q"}], {"maxTokens": 128, "budgetUsd": 0.05})
+    assert exc.value.code == "budget_pricing_unknown"
+    assert calls == ["/v1/models"]
+
+
+@pytest.mark.asyncio
 async def test_budget_derived_cap_is_sent_and_disclosed():
     bodies = []
     def handle(request):
