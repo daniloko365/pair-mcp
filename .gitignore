@@ -1,0 +1,13 @@
+node_modules/
+dist/
+build/
+target/
+.venv/
+__pycache__/
+.env
+.env.*
+!.env.example
+.private/
+*.log
+.DS_Store
+*.egg-info/

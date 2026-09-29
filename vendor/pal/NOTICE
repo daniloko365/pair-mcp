@@ -1,0 +1,6 @@
+Pair reuses the CLI-only runner and output parsers from PAL MCP Server.
+Copyright 2025 Beehive Innovations.
+Upstream: https://github.com/BeehiveInnovations/pal-mcp-server
+Revision: 7afc7c1cc96e23992c8f105f960132c657883bb1
+Licensed under Apache License 2.0; see LICENSE.
+Pair modifications are documented in THIRD_PARTY_PAL.md.

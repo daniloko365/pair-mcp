@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pair — совет и партнёр"
+  short_description: "Совет моделей и совместная работа Codex с Claude"
+  default_prompt: "Use $pair-work to consult the configured council or coordinate available Codex and Claude agents on an approved project from this chat, with a verified handoff between jobs."

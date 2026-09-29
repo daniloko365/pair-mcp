@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pair-companion"
+version = "1.0.0"
+description = "Local model council and official CLI collaboration companion"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+  "mcp==2.2.0",
+  "openai==3.19.2",
+  "anthropic==1.8.0",
+  "httpx==0.28.1",
+  "pydantic==2.13.5",
+  "uvicorn==0.54.0",
+  "filelock==4.0.4",
+]
+
+[project.scripts]
+pair = "pair_core.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pair_core*", "vendor*"]
+exclude = ["tests*", ".private*"]
+
+[tool.setuptools.package-data]
+"vendor.pal" = ["LICENSE", "NOTICE", "PROVENANCE.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=1",
+    "pip-audit>=2",
+    "pyinstaller>=6.22.3",
+]

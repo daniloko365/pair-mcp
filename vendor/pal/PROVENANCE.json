@@ -1,0 +1,64 @@
+{
+  "repository": "https://github.com/BeehiveInnovations/pal-mcp-server",
+  "revision": "7afc7c1cc96e23992c8f105f960132c657883bb1",
+  "license": "Apache-2.0",
+  "upstreamFiles": [
+    {
+      "upstreamPath": "LICENSE",
+      "sha256": "06c5302b668e8339e2fec2bc4ddd2a0b6cbc3355da4cd2ac24afeeaf08b2bd0c"
+    },
+    {
+      "upstreamPath": "clink/constants.py",
+      "sha256": "3fc2e4b28f134936e1caf6cece29ba8b7e10299404012523a11af9a2e601d7fe"
+    },
+    {
+      "upstreamPath": "clink/models.py",
+      "sha256": "41d4370e288532b4fb8067f1a0a18ac6a7ee854b69b6ff7e538e8dd6a46c18da"
+    },
+    {
+      "upstreamPath": "clink/agents/base.py",
+      "sha256": "825053d8a5fab2ceb72784a0c48f1238b4ca8a04972be5e777a7690c24e476ab"
+    },
+    {
+      "upstreamPath": "clink/agents/claude.py",
+      "sha256": "ad93cf4730bb22ab8dc469c2aa17e6bb4e70afbd1b8b053f516c71c2abda3528"
+    },
+    {
+      "upstreamPath": "clink/agents/codex.py",
+      "sha256": "b0dbbd8c0017d5bb98f7d8ed75262c7b2a95d25ffa0f9cc88e8dfbd690750865"
+    },
+    {
+      "upstreamPath": "clink/parsers/base.py",
+      "sha256": "a42324198c93567114aa212023e0c561ec6a58a25df6ee9caf82ce5d07863812"
+    },
+    {
+      "upstreamPath": "clink/parsers/claude.py",
+      "sha256": "5d6ea7c10309be881e08e9cfffb34da29b5f9e3ac7bca5eac0412b2183f0e2fd"
+    },
+    {
+      "upstreamPath": "clink/parsers/codex.py",
+      "sha256": "52f6041ffa73fe0deb76528b19efa9df78d0deb1b6e02680fbdea34a4cc84d9a"
+    },
+    {
+      "upstreamPath": "clink/parsers/gemini.py",
+      "sha256": "b66aa914c213aee51f1d3f02f4f1b33abdf9261aabfd13f775a1ef8babf7dafb"
+    },
+    {
+      "upstreamPath": "clink/parsers/__init__.py",
+      "sha256": "7d78082b4915e8a517cdd4a96fc698e746248de3d30aa0b66426126c8824f928"
+    },
+    {
+      "upstreamPath": "clink/__init__.py",
+      "sha256": "e929f4569db5f9062cc3bbfb6bdb614e28854d06bb19ceaa57fddd12bdc21557"
+    },
+    {
+      "upstreamPath": "clink/agents/__init__.py",
+      "sha256": "6d046292852c7ce097a4759ea8ea58358ae055293c3a513c39f16bb36edb5627"
+    }
+  ],
+  "adaptationsDocument": "THIRD_PARTY_PAL.md",
+  "runtimeDependencies": [
+    "Python standard library",
+    "pydantic (project-pinned)"
+  ]
+}

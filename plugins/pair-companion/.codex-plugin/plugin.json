@@ -1,0 +1,19 @@
+{
+  "name": "pair-companion",
+  "version": "1.0.0",
+  "description": "Local model council and official Codex/Claude collaboration",
+  "author": {
+    "name": "Pair contributors"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Pair",
+    "shortDescription": "Совет моделей и партнёр для кодинга",
+    "longDescription": "Local settings, independent model opinions and scoped official Codex/Claude tasks.",
+    "developerName": "Pair contributors",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": "Use $pair-work to consult my configured council or delegate a scoped task to my partner."
+  },
+  "mcpServers": "./.mcp.json"
+}
